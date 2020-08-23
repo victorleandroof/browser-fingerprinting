@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>A simple fingerprint engine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #50d691;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p {
+            font-size: 61px;
+            color: #46177d;
+            font-weight: 100px;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Your Fingerprint:
+        <span id="fingerprint"></span>
+    </p><br>
+    <script src="fingerprint.js"></script>
+    <script>
+        const fingerprint =  Fingerprint({screen_resolution: true,ie_activex: true,canvas: true});
+        document.getElementById('fingerprint').innerHTML = fingerprint.generate();
+    </script>
+</body>
+
+</html>
